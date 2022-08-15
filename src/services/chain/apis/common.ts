@@ -1,4 +1,4 @@
-import { bnToBn, bnToHex } from "@polkadot/util";
+import { bnToBn, bnToHex, formatBalance } from "@polkadot/util";
 import { AnyJson } from "@polkadot/types-codec/types";
 import { ExtrinsicStatus } from "@polkadot/types/interfaces/author/types";
 import { EventRecord } from "@polkadot/types/interfaces/system/types";
@@ -49,3 +49,5 @@ export function scaleEncodeDelegateData(data: DelegateData): string {
 
 export const getEventName = (ev: Record<string, AnyJson>): string =>
   `${ev.section}:${ev.method}`;
+
+export const bnToNumber = (amount: any) => formatBalance(amount.toString().replaceAll(',', ''), {withUnit: true}, 12)

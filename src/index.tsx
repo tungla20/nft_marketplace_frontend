@@ -3,13 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import "../src/styles/css/bootstrap.min.css"
+import "../src/styles/css/style.css"
+import "../src/styles/css/jquery-ui.min.css"
+import "../src/styles/css/all.min.css"
+import "../src/styles/css/custom.css"
+import { DataProvider } from "./context/DataContext";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <DataProvider>
+      <App />
+    </DataProvider>
   </React.StrictMode>
 );
 
